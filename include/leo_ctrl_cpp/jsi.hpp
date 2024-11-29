@@ -56,7 +56,7 @@ private:
             m_twist.linear.x = joy->axes[1] * m_linear_scale;
             m_twist.angular.z = joy->axes[0] * m_angular_scale;
 
-        
+            
     }
 
     // Control loop, called periodically by the timer
