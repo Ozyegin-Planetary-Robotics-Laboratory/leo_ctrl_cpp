@@ -56,7 +56,10 @@ private:
             m_twist.linear.x = joy->axes[1] * m_linear_scale;
             m_twist.angular.z = joy->axes[0] * m_angular_scale;
 
-            
+            RCLCPP_INFO(this->get_logger(), "axes[0]: %f, axes[1]: %f", joy->axes[0], joy->axes[1]);
+        } else {
+            RCLCPP_WARN(this->get_logger(), "Joystick message has insufficient axes data.");
+        }
     }
 
     // Control loop, called periodically by the timer
